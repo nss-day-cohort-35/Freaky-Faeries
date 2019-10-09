@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from "react-router-dom"
 import './index.css'
 import Dashboard from './components/dashboard/Dashboard'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <Router>
