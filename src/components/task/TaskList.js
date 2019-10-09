@@ -10,7 +10,37 @@ class TaskList extends Component {
     //define what this component needs to render
     state = {
         tasks: [],
-        modal: false
+        modal: false,
+        loadingStatus: false
+    }
+    handleFieldChange = evt => {
+        const stateToChange = {};
+        stateToChange[evt.target.id] = evt.target.value;
+        this.setState(stateToChange);
+    };
+    constructNewTask = evt => {
+        evt.preventDefault();
+        if (this.state.taskName === "" || this.state.date === "") {
+            window.alert("Please input a title and due date");
+        } else {
+            this.setState({ loadingStatus: true });
+            const task = {
+                name: this.state.taskName,
+                date: this.state.date,
+            };
+
+            TaskManager.post(task)
+            .then(() => this.getData());
+        }
+        
+    };
+    getData = () => {
+        TaskManager.getAll()
+            .then((tasks) => {
+                this.setState({
+                    tasks: tasks
+                })
+            })
     }
     toggle = () => {
         this.setState(prevState => ({
@@ -18,15 +48,7 @@ class TaskList extends Component {
         }));
     }
     componentDidMount() {
-        console.log("TASK LIST: ComponentDidMount");
-        //getAll from TaskManager and hang on to that data; put it in state
-        TaskManager.getAll()
-            .then((tasks) => {
-                this.setState({
-                    tasks: tasks
-                })
-            })
-
+        this.getData()
     }
 
 
@@ -35,30 +57,47 @@ class TaskList extends Component {
     render() {
         console.log(this.props)
         return (
-            //add this button above your display of animal cards
+            // onClick={() => { this.props.history.push("/tasks/new") }}
             <>
-                <section className="taskAddBtn">
-                    <button type="button"
-                        className="btn"
-                        onClick={() => { this.props.history.push("/tasks/new") }}>
-                        Add New Task
-                </button>
-                </section>
-                <div className="taskCardContainer">
-                    {this.state.tasks.map(task => <TaskCard key={task.id} task={task}{...this.props} />)}
-                </div>
                 <div>
-                    <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+                    <Button color="danger" onClick={this.toggle} >{this.props.buttonLabel} Add New Task </Button>
                     <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                        <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+                        <ModalHeader toggle={this.toggle}>Add New Task</ModalHeader>
                         <ModalBody>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </ModalBody>
+                            <form>
+                                <fieldset>
+                                    <div className="taskForm">
+                                        <label htmlFor="taskName">Title:</label>
+                                        <input
+                                            type="text"
+                                            required
+                                            onChange={this.handleFieldChange}
+                                            id="taskName"
+                                            placeholder="Task Title"
+                                        />
+                                        <label htmlFor="date">Date:</label>
+                                        <input
+                                            type="date"
+                                            required
+                                            onChange={this.handleFieldChange}
+                                            id="date"
+                                            placeholder="Date"
+                                        />
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </ModalBody>
                         <ModalFooter>
-                            <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+                            <Button color="primary" disabled={this.state.loadingStatus}
+                                onClick={(evt) => {
+                                    this.constructNewTask(evt)
+                                    this.toggle()}}>Add New Task</Button>{' '}
                             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                         </ModalFooter>
                     </Modal>
+                </div>
+                <div className="taskCardContainer">
+                    {this.state.tasks.map(task => <TaskCard key={task.id} task={task}{...this.props} />)}
                 </div>
             </>
         )
