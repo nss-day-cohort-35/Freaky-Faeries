@@ -1,5 +1,6 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
+import TaskAddForm from "./task/TaskAddForm";
 
 export default class ApplicationViews extends Component {
 
@@ -7,12 +8,9 @@ export default class ApplicationViews extends Component {
     return (
       <React.Fragment>
 
-        <Route
-          exact path="/" render={props => {
-            return null
-            // Remove null and return the component which will show news articles
-          }}
-        />
+        <Route exact path="/tasks/new" render={(props) => {
+          return <TaskAddForm {...props} />
+        }} />
 
         <Route
           path="/friends" render={props => {
@@ -34,7 +32,7 @@ export default class ApplicationViews extends Component {
             // Remove null and return the component which will show the user's tasks
           }}
         />
-        
+
       </React.Fragment>
     );
   }
