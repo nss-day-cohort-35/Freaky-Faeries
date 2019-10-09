@@ -4,6 +4,7 @@ import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
 import TaskCard from "./task/TaskCard";
+import FriendCard from "./friend/FriendCard";
 
 class Nutshell extends Component {
   render() {
@@ -12,6 +13,7 @@ class Nutshell extends Component {
         <NavBar />
         <ApplicationViews />
         <TaskCard />
+        <FriendCard />
       </React.Fragment>
     );
   }
