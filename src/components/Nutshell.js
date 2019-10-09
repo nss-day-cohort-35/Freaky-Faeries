@@ -1,7 +1,9 @@
+/* Login logic, sets sessionStorage, has state*/
 import React, { Component } from "react";
 import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
+import TaskCard from "./task/TaskCard";
 
 class Nutshell extends Component {
   render() {
@@ -9,6 +11,7 @@ class Nutshell extends Component {
       <React.Fragment>
         <NavBar />
         <ApplicationViews />
+        <TaskCard />
       </React.Fragment>
     );
   }

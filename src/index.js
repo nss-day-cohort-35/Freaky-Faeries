@@ -1,3 +1,4 @@
+/* Index.js connects to index.html-- puts everything on the page*/
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from "react-router-dom"
