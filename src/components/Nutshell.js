@@ -3,8 +3,9 @@ import React, { Component } from "react";
 // import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
-import TaskCard from "./task/TaskCard";
-import EventCard from "./event/EventCard";
+import TaskList from "./task/TaskList";
+import NewsCard from "./news/NewsCard"
+import EventList from "./event/EventList"
 
 class Nutshell extends Component {
   render() {
@@ -12,8 +13,9 @@ class Nutshell extends Component {
       <React.Fragment>
         {/* <NavBar /> */}
         <ApplicationViews />
-        <TaskCard />
-        <EventCard />
+        <TaskList />
+        <NewsCard />
+        <EventList />
       </React.Fragment>
     );
   }

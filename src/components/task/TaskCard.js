@@ -8,10 +8,8 @@ class TaskCard extends Component {
             <>
                 <div className="taskCard">
                     <div className="taskCardContent">
-                        <h3>Task:</h3>
-                        <p>Due Date:</p>
-                        <button className="taskEditBtn" id="editBtn" type="button">Edit</button>
-                        <button className="taskDeleteBtn" id="deleteBtn" type="button">Delete</button>
+                        <h3>Task: {this.props.task.name}</h3>
+                        <p>Due Date: {this.props.task.date}</p>
                         <button className="taskCompBtn" type="button">Completed</button>
                     </div>
                 </div>
