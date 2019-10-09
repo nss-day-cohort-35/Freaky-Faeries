@@ -28,7 +28,7 @@ class TaskList extends Component {
                 <section className="taskAddBtn">
                     <button type="button"
                         className="btn"
-                        onClick={() => { this.props.history.push("/tasks/new") }}>
+                        onClick={() => {this.props.history.push("/tasks/new") }}>
                         Add New Task
                 </button>
                 </section>
