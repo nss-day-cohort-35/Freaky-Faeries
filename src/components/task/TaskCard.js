@@ -10,6 +10,8 @@ class TaskCard extends Component {
                     <div className="taskCardContent">
                         <h3>Task:</h3>
                         <p>Due Date:</p>
+                        <button className="taskEditBtn" id="editBtn" type="button">Edit</button>
+                        <button className="taskDeleteBtn" id="deleteBtn" type="button">Delete</button>
                         <button className="taskCompBtn" type="button">Completed</button>
                     </div>
                 </div>
