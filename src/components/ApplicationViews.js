@@ -1,4 +1,4 @@
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import TaskAddForm from "./task/TaskAddForm";
 
@@ -32,7 +32,6 @@ export default class ApplicationViews extends Component {
             // Remove null and return the component which will show the user's tasks
           }}
         />
-
       </React.Fragment>
     );
   }
