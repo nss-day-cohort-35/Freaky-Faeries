@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import NavBar from "./nav/NavBar";
 import ApplicationViews from "./ApplicationViews";
 import "./Nutshell.css";
-import TaskCard from "./task/TaskCard";
-import FriendCard from "./friend/FriendCard";
+import TaskList from "./task/TaskList";
+import NewsCard from "./news/NewsCard"
 
 class Nutshell extends Component {
   render() {
@@ -12,8 +12,8 @@ class Nutshell extends Component {
       <React.Fragment>
         <NavBar />
         <ApplicationViews />
-        <TaskCard />
-        <FriendCard />
+        <TaskList />
+        <NewsCard />
       </React.Fragment>
     );
   }
