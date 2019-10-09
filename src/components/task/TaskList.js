@@ -10,6 +10,7 @@ class TaskList extends Component {
     }
 
     componentDidMount() {
+        console.log("TASK LIST: ComponentDidMount");
         //getAll from TaskManager and hang on to that data; put it in state
         TaskManager.getAll()
             .then((tasks) => {
@@ -20,11 +21,21 @@ class TaskList extends Component {
     }
 
     render() {
-
+        console.log(this.props)
         return (
-            <div className="taskCardContainer">
-                {this.state.tasks.map(task => <TaskCard key={task.id} task={task}{...this.props} />)}
-            </div>
+            //add this button above your display of animal cards
+            <>
+                <section className="taskAddBtn">
+                    <button type="button"
+                        className="btn"
+                        onClick={() => { this.props.history.push("/tasks/new") }}>
+                        Add New Task
+                </button>
+                </section>
+                <div className="taskCardContainer">
+                    {this.state.tasks.map(task => <TaskCard key={task.id} task={task}{...this.props} />)}
+                </div>
+            </>
         )
     }
 }
