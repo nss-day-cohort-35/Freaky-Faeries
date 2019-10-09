@@ -8,8 +8,8 @@ class TaskCard extends Component {
             <>
                 <div className="taskCard">
                     <div className="taskCardContent">
-                        <h3>Task:</h3>
-                        <p>Due Date:</p>
+                        <h3>Task: {this.props.task.name}</h3>
+                        <p>Due Date: {this.props.task.date}</p>
                         <button className="taskCompBtn" type="button">Completed</button>
                     </div>
                 </div>
