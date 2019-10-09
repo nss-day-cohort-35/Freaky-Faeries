@@ -21,11 +21,10 @@ import React, { Component } from 'react'
     }
 
     render(){
-        console.log("CHAT LIST: Render");
 
         return(
-            <div className="container-cards">
-                {this.state.chats.map(chat => <ChatCard />)}
+            <div className="chatCardContainer">
+                {this.state.chats.map(chat => <ChatCard key={chat.id} chat={chat}{...this.props} />)}
             </div>
         )
     }

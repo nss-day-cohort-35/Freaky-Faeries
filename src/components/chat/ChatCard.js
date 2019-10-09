@@ -6,8 +6,8 @@ class ChatCard extends Component {
         return (
             <>
             <div className="chatCard">
-            <h3>Chat Message:</h3>
-            <p>Date</p>
+            <h3>Chat Message:{this.props.chat.message}</h3>
+            <p>Date: {this.props.chat.date}</p>
             <button className="chatPostBtn" type="button">Post Chat</button>
             </div>
             </>
