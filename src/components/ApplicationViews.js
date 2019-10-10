@@ -7,6 +7,7 @@ import FriendList from './friend/FriendList';
 import NewsList from './news/NewsList';
 import EventList from './event/EventList';
 
+
 export default class ApplicationViews extends Component {
 
   render() {
@@ -23,7 +24,6 @@ export default class ApplicationViews extends Component {
             </div>
           )
         }} />
-
         <Route exact path="/tasks/new" render={(props) => {
           return <TaskAddForm {...props} />
         }} />
