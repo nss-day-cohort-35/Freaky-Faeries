@@ -62,7 +62,7 @@
 .mainSection {
     border-style: none;
     display: flex;
-    width: 75vw;
+    width: 50vw;
     flex-direction: column;
 }
 
