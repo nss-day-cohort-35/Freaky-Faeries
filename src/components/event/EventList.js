@@ -60,6 +60,7 @@ class EventList extends Component {
         return (
             <>
                 <div className="eventFormContainer">
+                    <h3>EVENTS</h3>
                     <Button color="success" onClick={this.toggle} >{this.props.buttonLabel} Add New Event </Button>
                     <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                         <ModalHeader toggle={this.toggle}>Add New Event</ModalHeader>
