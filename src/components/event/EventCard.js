@@ -8,7 +8,7 @@ class EventCard extends Component {
             <>
                 <div className="eventCard">
                     <div className="eventCardContent">
-                        <h3>Event: {this.props.event.name}</h3>
+                        <p>Event: {this.props.event.name}</p>
                         <p>Date:{this.props.event.date}</p>
                         <p>Venue:{this.props.event.venue}</p>
                         <button className="eventEditBtn" id="editBtn" type="button">Edit</button>

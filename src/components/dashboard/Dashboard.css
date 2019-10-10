@@ -1,0 +1,76 @@
+/* Components Border CSS */
+
+.newsCardContainer {
+    border-style: solid;
+    border-color: black;
+}
+
+.newsFormContainer {
+    border-style: solid;
+    border-color: blue;
+}
+
+.eventCardContainer {
+    border-style: solid;
+    border-color: black;
+}
+
+.eventFormContainer {
+    border-style: solid;
+    border-color: red;
+}
+
+.chatCardContainer {
+    border-style: solid;
+    border-color: black;
+}
+
+.chatFormContainer {
+    border-style: solid;
+    border-color: purple;
+}
+
+.taskCardContainer {
+    border-style: solid;
+    border-color: black;
+}
+
+.taskFormContainer {
+    border-style: solid;
+    border-color: green;
+}
+
+:root {
+    display: flex;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.leftSection {
+    border-style: none;
+    border-radius: 2em;
+    display: flex;
+    width: 25vw;
+    height: 100vh;
+}
+
+.mainSection {
+    border-style: none;
+    display: flex;
+    width: 75vw;
+    flex-direction: column;
+}
+
+.rightSection {
+    border-style: none;
+    border-radius: 2em;
+    display: flex;
+    width: 25vw;
+    flex-direction: column;
+    height: 100vh;
+}

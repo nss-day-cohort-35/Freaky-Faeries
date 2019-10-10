@@ -16,14 +16,20 @@ export default class ApplicationViews extends Component {
       <React.Fragment>
         <Route exact path="/" render={(props) => {
           return (
-            <div>
+            <div className="main">
               {/* <FriendAddForm {...props} /> */}
+              <section className="leftSection">
+              <FriendList {...props} />
+              </section>
+              <section className="mainSection">
+              <ChatList {...props} />
               <TaskList {...props} />
+              </section>
+              <section className="rightSection">
               <EventList {...props} />
               <NewsList {...props} />
-              <FriendList {...props} />
-              <ChatList {...props} />
-            </div>
+              </section>
+           </div>
           )
         }} />
 
