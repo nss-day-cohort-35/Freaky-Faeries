@@ -6,5 +6,14 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/events`).then(result => result.json())
-  }
+  },
+  post(newEvent) {
+    return fetch(`${remoteURL}/events`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newEvent)
+    }).then(data => data.json())
+}
 }
