@@ -39,9 +39,14 @@ export default class ApplicationViews extends Component {
             // Remove null and return the component which will show list of friends
           }}
         />
-
         <Route
-          path="/messages" render={props => {
+          path="/chats" render={props => {
+            return null
+            // Remove null and return the component which will show the messages
+          }}
+        />
+        <Route
+          path="/chats/new" render={props => {
             return null
             // Remove null and return the component which will show the messages
           }}
