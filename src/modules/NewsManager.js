@@ -6,5 +6,14 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/news`).then(result => result.json())
-  }
+  },
+  post(news) {
+    return fetch(`${remoteURL}/news`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(news)
+    }).then(data => data.json())
+}
 }
