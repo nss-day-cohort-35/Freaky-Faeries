@@ -52,7 +52,8 @@ import React, { Component } from 'react'
 
         return(
             <>
-                <div>
+                <div className="chatFormContainer">
+                    <h3>CHAT</h3>
                     <Button color="danger" onClick={this.toggle} >{this.props.buttonLabel} Add New Chat Message </Button>
                     <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                         <ModalHeader toggle={this.toggle}>Add New Chat</ModalHeader>

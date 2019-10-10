@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom"
 import React, { Component } from "react";
 import TaskAddForm from "./task/TaskAddForm";
 import EventAddForm from './event/EventAddForm';
@@ -11,21 +11,30 @@ import EventList from './event/EventList';
 
 export default class ApplicationViews extends Component {
 
+  isAuthenticated = () => localStorage.getItem("credentials") !== null
+
   render() {
     return (
       <React.Fragment>
         <Route exact path="/" render={(props) => {
-          return (
-            <div>
-              {/* <FriendAddForm {...props} /> */}
-              <TaskList {...props} />
-              <EventList {...props} />
-              <NewsList {...props} />
-              <FriendList {...props} />
-              <ChatList {...props} />
-            </div>
-          )
-        }} />
+            return (
+              <div className="main">
+                {/* <FriendAddForm {...props} /> */}
+                <section className="leftSection">
+                  <FriendList {...props} />
+                </section>
+                <section className="mainSection">
+                  <ChatList {...props} />
+                  <TaskList {...props} />
+                </section>
+                <section className="rightSection">
+                  <EventList {...props} />
+                  <NewsList {...props} />
+                </section>
+              </div>
+            )
+          }
+        } />
 
         <Route exact path="/tasks/new" render={(props) => {
           return <TaskAddForm {...props} />

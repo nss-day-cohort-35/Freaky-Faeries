@@ -6,7 +6,7 @@ class NewsCard extends Component {
             <>
                 <div className="newsCard">
                     <div className="newsCardContent">
-                        <h3>Title: {this.props.news.title}</h3>
+                        <p>Title: {this.props.news.title}</p>
                         <p>Date: {this.props.news.date}</p>
                         <p>Synopsis: {this.props.news.synopsis}</p>
                         <button className="newsDeleteBtn" id="deleteBtn" type="button">Delete</button>
