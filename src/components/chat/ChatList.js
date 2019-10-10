@@ -16,14 +16,14 @@ import React, { Component } from 'react'
             stateToChange[evt.target.id] = evt.target.value;
             this.setState(stateToChange);
         };
-        constructNewTask = evt => {
+        constructNewChat = evt => {
             evt.preventDefault();
             if (this.state.message === "" || this.state.date === "") {
                 window.alert("Please input a message and date");
             } else {
                 this.setState({ loadingStatus: true });
-                const task = {
-                    name: this.state.message,
+                const chat = {
+                    message: this.state.message,
                     date: this.state.date,
                 };
 
@@ -83,14 +83,14 @@ import React, { Component } from 'react'
                         <ModalFooter>
                             <Button color="primary" disabled={this.state.loadingStatus}
                                 onClick={(evt) => {
-                                    this.constructNewTask(evt)
-                                    this.toggle()}}>Add New Task</Button>{' '}
+                                    this.constructNewChat(evt)
+                                    this.toggle()}}>Add New Chat Message</Button>{' '}
                             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                         </ModalFooter>
                     </Modal>
                 </div>
                 <div className="chatCardContainer">
-                    {this.state.chat.map(chat => <ChatCard key={chat.id} chat={chat}{...this.props} />)}
+                    {this.state.chats.map(chat => <ChatCard key={chat.id} chat={chat}{...this.props} />)}
                 </div>
             </>
         )

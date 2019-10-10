@@ -20,7 +20,7 @@ class ChatAddForm extends Component {
             window.alert("Please input a message and date");
         } else {
             this.setState({ loadingStatus: true });
-            const task = {
+            const chat = {
                 message: this.state.message,
                 date: this.state.date,
             };
@@ -54,7 +54,7 @@ class ChatAddForm extends Component {
                         />
                         <label htmlFor="date">Date:</label>
                     </div>
-                    <div className="taskAddBtn">
+                    <div className="chatAddBtn">
                         <button
                         type="button"
                         disabled={this.state.loadingStatus}
