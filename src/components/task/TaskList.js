@@ -32,7 +32,7 @@ class TaskList extends Component {
             TaskManager.post(task)
             .then(() => this.getData());
         }
-        
+
     };
     getData = () => {
         TaskManager.getAll()
