@@ -15,6 +15,20 @@ export default {
             },
             body: JSON.stringify(newChat)
         }).then(data => data.json())
+    },
+    delete(id) {
+        return fetch(`http://localhost:5002/chats/${id}`, {
+            method: "DELETE"
+        })
+        .then(result => result.json())
+      },
+      update(editedChat) {
+        return fetch(`${remoteURL}/chats/${editedChat.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(editedChat)
+        }).then(data => data.json());
+      }
     }
-
-}
