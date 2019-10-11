@@ -51,7 +51,6 @@ class NewsList extends Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             // onClick={() => { this.props.history.push("/tasks/new") }}
             <>
@@ -95,7 +94,10 @@ class NewsList extends Component {
                     </Modal>
                 </div>
                 <div className="newsCardContainer">
-                    {this.state.news.map(news => <NewsCard key={news.id} news={news}{...this.props} />)}
+                    {this.state.news.map(news => <NewsCard
+                        key={news.id}
+                        news={news}
+                        {...this.props} />)}
                 </div>
             </>
         )

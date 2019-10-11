@@ -15,5 +15,21 @@ export default {
             },
             body: JSON.stringify(newTask)
         }).then(data => data.json())
+    },
+    delete(id) {
+        return fetch(`http://localhost:5002/tasks/${id}`, {
+            method: "DELETE"
+        })
+            .then(result => result.json())
+    },
+    update(editedTask) {
+        return fetch(`${remoteURL}/tasks/${editedTask.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(editedTask)
+        }).then(data => data.json());
     }
+
 }
