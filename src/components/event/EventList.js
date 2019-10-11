@@ -97,7 +97,7 @@ class EventList extends Component {
                             </form>
                         </ModalBody>
                         <ModalFooter>
-                            <Button color="info" disabled={this.state.loadingStatus}
+                            <Button color="info" 
                                 onClick={(evt) => {
                                     this.constructNewEvent(evt)
                                     this.toggle()}}>Add New Event</Button>{' '}
