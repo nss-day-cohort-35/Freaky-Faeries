@@ -26,7 +26,7 @@ class ChatCard extends Component {
         this.setState({ loadingStatus: true });
         const editedChat = {
             id: this.props.chat.id,
-            mesasge: this.state.message,
+            message: this.state.message,
             date: this.state.date,
         };
         ChatManager.update(editedChat)
