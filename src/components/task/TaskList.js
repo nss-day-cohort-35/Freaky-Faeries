@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import TaskCard from './TaskCard'
 import TaskManager from '../../modules/TaskManager'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
+import './Task.css'
 
 
 class TaskList extends Component {
@@ -30,7 +30,7 @@ class TaskList extends Component {
             };
 
             TaskManager.post(task)
-            .then(() => this.getData());
+                .then(() => this.getData());
         }
 
     };
@@ -55,7 +55,6 @@ class TaskList extends Component {
 
 
     render() {
-        console.log(this.props)
         return (
             // onClick={() => { this.props.history.push("/tasks/new") }}
             <>
@@ -92,13 +91,18 @@ class TaskList extends Component {
                             <Button color="primary" disabled={this.state.loadingStatus}
                                 onClick={(evt) => {
                                     this.constructNewTask(evt)
-                                    this.toggle()}}>Add New Task</Button>{' '}
+                                    this.toggle()
+                                }}>Add New Task</Button>{' '}
                             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                         </ModalFooter>
                     </Modal>
                 </div>
                 <div className="taskCardContainer">
-                    {this.state.tasks.map(task => <TaskCard key={task.id} task={task}{...this.props} />)}
+                    {this.state.tasks.map(task => <TaskCard
+                        key={task.id}
+                        task={task}
+                        getData={this.getData}
+                        {...this.props} />)}
                 </div>
             </>
         )

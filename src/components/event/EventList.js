@@ -31,9 +31,9 @@ class EventList extends Component {
             };
 
             EventManager.post(event)
-            .then(() => this.getData());
+                .then(() => this.getData());
         }
-        
+
     };
     getData = () => {
         EventManager.getAll()
@@ -56,7 +56,6 @@ class EventList extends Component {
 
 
     render() {
-        console.log(this.props)
         return (
             <>
                 <div className="eventFormContainer">
@@ -97,19 +96,21 @@ class EventList extends Component {
                             </form>
                         </ModalBody>
                         <ModalFooter>
-                            <Button color="info" disabled={this.state.loadingStatus}
+                            <Button color="info" 
                                 onClick={(evt) => {
                                     this.constructNewEvent(evt)
-                                    this.toggle()}}>Add New Event</Button>{' '}
+                                    this.toggle()
+                                }}>Add New Event</Button>{' '}
                             <Button color="info" onClick={this.toggle}>Cancel</Button>
                         </ModalFooter>
                     </Modal>
                 </div>
                 <div className="eventCardContainer">
-                    {this.state.events.map(event => <EventCard 
-                                                                         key={event.id} 
-                                                                          event={event}
-                                                                       {...this.props} />)}
+                    {this.state.events.map(event => <EventCard
+                        key={event.id}
+                        event={event}
+                        getData={this.getData}
+                        {...this.props} />)}
                 </div>
             </>
         )
