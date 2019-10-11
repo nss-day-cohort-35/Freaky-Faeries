@@ -109,6 +109,7 @@ class EventList extends Component {
                     {this.state.events.map(event => <EventCard 
                                                                          key={event.id} 
                                                                           event={event}
+                                                                          getData={this.getData}
                                                                        {...this.props} />)}
                 </div>
             </>
