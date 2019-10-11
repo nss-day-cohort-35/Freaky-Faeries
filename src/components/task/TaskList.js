@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import TaskCard from './TaskCard'
 import TaskManager from '../../modules/TaskManager'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
+import './Task.css'
 
 
 class TaskList extends Component {

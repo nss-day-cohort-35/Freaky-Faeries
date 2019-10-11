@@ -72,6 +72,7 @@ class NewsList extends Component {
                                             id="newsTitle"
                                             placeholder="News Title"
                                         />
+                                        <br></br>
                                         <label htmlFor="date">Date:</label>
                                         <input
                                             type="date"
@@ -79,6 +80,15 @@ class NewsList extends Component {
                                             onChange={this.handleFieldChange}
                                             id="date"
                                             placeholder="Date"
+                                        />
+                                        <br></br>
+                                        <label htmlFor="synopsis">Synopsis:</label>
+                                        <input
+                                            type="text"
+                                            required
+                                            onChange={this.handleFieldChange}
+                                            id="synopsis"
+                                            placeholder="Synopsis"
                                         />
                                     </div>
                                 </fieldset>
@@ -95,7 +105,7 @@ class NewsList extends Component {
                     </Modal>
                 </div>
                 <div className="newsCardContainer">
-                    {this.state.news.map(news => <NewsCard key={news.id} news={news}{...this.props} />)}
+                    {this.state.news.map(news => <NewsCard key={news.id} news={news}getData={this.getData}{...this.props} />)}
                 </div>
             </>
         )

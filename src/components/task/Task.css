@@ -1,0 +1,9 @@
+.far {
+    color: black;
+}
+
+.far:hover {
+    color:#fb6000;
+    cursor: pointer;
+}
+

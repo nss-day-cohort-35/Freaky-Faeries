@@ -7,10 +7,13 @@ class TaskCard extends Component {
         return (
             <>
                 <div className="taskCard">
-                    <div className="taskCardContent">
+                        <div className="checkBox">
+                        <i className="far fa-check-circle fa-2x"></i>
+                        </div>
+                        <div className="taskCardContent">
                         <p>Task: {this.props.task.name}</p>
+                        <br></br>
                         <p>Due Date: {this.props.task.date}</p>
-                        <button className="taskCompBtn" type="button">Completed</button>
                     </div>
                 </div>
             </>
