@@ -90,13 +90,17 @@ class TaskCard extends Component {
                     </ModalFooter>
                 </Modal>
                 <div className="taskCard">
+                    <div className="checkBox">
+                    </div>
                     <div className="taskCardContent">
                         <p>Task: {this.props.task.name}</p>
+                        <br></br>
                         <p>Due Date: {this.props.task.date}</p>
-                        <Button color="info" className="taskDeleteBtn" id="deleteBtn" type="button" onClick={()=> this.handleDelete(this.props.task.id)}>Delete</Button>
-                        <Button color="info" onClick={this.toggle} >{this.props.buttonLabel} Edit Task </Button>
-                    </div>
+                        <i className="far fa-check-circle fa-2x"
+                        onClick={() => this.handleDelete(this.props.task.id)}></i>
+                    <Button color="info" onClick={this.toggle} >{this.props.buttonLabel} Edit Task </Button>
                 </div>
+            </div>
             </>
         );
     }

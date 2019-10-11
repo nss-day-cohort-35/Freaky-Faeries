@@ -71,6 +71,7 @@ class NewsList extends Component {
                                             id="newsTitle"
                                             placeholder="News Title"
                                         />
+                                        <br></br>
                                         <label htmlFor="date">Date:</label>
                                         <input
                                             type="date"
@@ -78,6 +79,15 @@ class NewsList extends Component {
                                             onChange={this.handleFieldChange}
                                             id="date"
                                             placeholder="Date"
+                                        />
+                                        <br></br>
+                                        <label htmlFor="synopsis">Synopsis:</label>
+                                        <input
+                                            type="text"
+                                            required
+                                            onChange={this.handleFieldChange}
+                                            id="synopsis"
+                                            placeholder="Synopsis"
                                         />
                                     </div>
                                 </fieldset>
