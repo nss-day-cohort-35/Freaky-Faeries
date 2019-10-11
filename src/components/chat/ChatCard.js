@@ -62,7 +62,7 @@ class ChatCard extends Component {
                                 className="form-control"
                                 onChange={this.handleFieldChange}
                                 id="message"
-                                value={this.state.chatName}
+                                value={this.state.message}
                             />
                             <label htmlFor="date">Date: </label>
                             <input
