@@ -11,7 +11,6 @@ class Login extends Component {
         id: "",
     }
 
-    // Update state whenever an input field is edited
     handleFieldChange = (evt) => {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
@@ -31,20 +30,12 @@ class Login extends Component {
             } else if (this.state.password === "") {
                 window.alert("Please enter password")
             } else if (singleUser) {
-                sessionStorage.setItem("userId", singleUser.id);
-                sessionStorage.setItem("email", this.state.email);
+                this.props.setUser(singleUser);
             } else {
                 window.alert("User email and password do not match")
             }
-            LoginManager.getUserData(singleUser)
-          .then(() => {
-              //This determines which page you land on upon registration
-              this.props.setUser()
-          }
-          )
-
         })
-        
+
     }
 
     render() {

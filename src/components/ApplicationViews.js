@@ -7,10 +7,6 @@ import TaskList from './task/TaskList';
 import FriendList from './friend/FriendList';
 import NewsList from './news/NewsList';
 import EventList from './event/EventList';
-import Register from './auth/Register';
-import Login from './auth/Login'
-
-// import FriendAddForm from './friend/FriendAddForm'
 
 export default class ApplicationViews extends Component {
 
@@ -45,14 +41,6 @@ export default class ApplicationViews extends Component {
 
         <Route exact path="/events/new" render={(props) => {
           return <EventAddForm {...props} />
-        }} />
-
-        <Route exact path="/login" render={props => {
-          return <Login setUser={this.props.setUser} {...props} />
-        }} />
-
-        <Route exact path="/register" render={props => {
-          return <Register setUser={this.props.setUser} {...props} />
         }} />
       </React.Fragment>
     );
