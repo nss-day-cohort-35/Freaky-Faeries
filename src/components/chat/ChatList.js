@@ -91,7 +91,9 @@ import React, { Component } from 'react'
                     </Modal>
                 </div>
                 <div className="chatCardContainer">
-                    {this.state.chats.map(chat => <ChatCard key={chat.id} chat={chat}{...this.props} />)}
+                    {this.state.chats.map(chat => <ChatCard key={chat.id} chat={chat}
+                    getData={this.getData}
+                    {...this.props} />)}
                 </div>
             </>
         )

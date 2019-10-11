@@ -20,7 +20,7 @@ class EventEditForm extends Component {
         evt.preventDefault()
         this.setState({ loadingStatus: true });
         const editedEvent = {
-            id: this.props.match.params.eventId,
+            id: this.props.id,
             name: this.state.eventName,
             date: this.state.date,
             venue: this.state.venue,
