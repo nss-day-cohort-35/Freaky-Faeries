@@ -53,17 +53,17 @@ class Register extends Component {
         <fieldset>
           <h3>Register</h3>
           <div className="formgrid">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Name: </label>
             <input onChange={this.handleFieldChange} type="name"
               id="name"
               placeholder="Name"
               required="" autoFocus="" />
-            <label htmlFor="inputEmail">Email address</label>
+            <label htmlFor="inputEmail">Email address: </label>
             <input onChange={this.handleFieldChange} type="email"
               id="email"
               placeholder="Email address"
               required="" autoFocus="" />
-            <label htmlFor="inputPassword">Password</label>
+            <label htmlFor="inputPassword">Password: </label>
             <input onChange={this.handleFieldChange} type="password"
               id="password"
               placeholder="Password"

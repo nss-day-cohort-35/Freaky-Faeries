@@ -14,6 +14,7 @@ class EventCard extends Component {
         eventName: "",
         date: "",
         venue: "",
+        userId: "",
         loadingStatus: true,
         modal: false
     };
@@ -32,6 +33,7 @@ class EventCard extends Component {
             name: this.state.eventName,
             date: this.state.date,
             venue: this.state.venue,
+            userId: parseInt(this.state.userId)
         };
 /*changed  history.push to getData-- renders state again -- gets all events */
         EventManager.update(editedEvent)
@@ -45,6 +47,7 @@ class EventCard extends Component {
               eventName: event.name,
               date: event.date,
               venue: event.venue,
+              userId: event.userId,
               loadingStatus: false,
             });
         });

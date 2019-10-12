@@ -44,12 +44,12 @@ class Login extends Component {
                 <fieldset>
                     <h3>Login</h3>
                     <div className="formgrid">
-                        <label htmlFor="inputEmail">Email address</label>
+                        <label htmlFor="inputEmail">Email address: </label>
                         <input onChange={this.handleFieldChange} type="email"
                             id="email"
                             placeholder="Email address"
                             required="" autoFocus="" />
-                        <label htmlFor="inputPassword">Password</label>
+                        <label htmlFor="inputPassword">Password: </label>
                         <input onChange={this.handleFieldChange} type="password"
                             id="password"
                             placeholder="Password"
