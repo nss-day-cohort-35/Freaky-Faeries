@@ -26,6 +26,7 @@ class NewsList extends Component {
             const news = {
                 title: this.state.newsTitle,
                 date: this.state.date,
+                synopsis: this.state.synopsis,
             };
 
             NewsManager.post(news)
@@ -54,60 +55,66 @@ class NewsList extends Component {
         return (
             // onClick={() => { this.props.history.push("/tasks/new") }}
             <>
-                <div className="newsFormContainer">
-                    <h3>NEWS</h3>
-                    <Button color="danger" onClick={this.toggle} >{this.props.buttonLabel} Add News </Button>
-                    <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                        <ModalHeader toggle={this.toggle}>Add News</ModalHeader>
-                        <ModalBody>
-                            <form>
-                                <fieldset>
-                                    <div className="newsForm">
-                                        <label htmlFor="newsTitle">Title:</label>
-                                        <input
-                                            type="text"
-                                            required
-                                            onChange={this.handleFieldChange}
-                                            id="newsTitle"
-                                            placeholder="News Title"
-                                        />
-                                        <br></br>
-                                        <label htmlFor="date">Date:</label>
-                                        <input
-                                            type="date"
-                                            required
-                                            onChange={this.handleFieldChange}
-                                            id="date"
-                                            placeholder="Date"
-                                        />
-                                        <br></br>
-                                        <label htmlFor="synopsis">Synopsis:</label>
-                                        <input
-                                            type="text"
-                                            required
-                                            onChange={this.handleFieldChange}
-                                            id="synopsis"
-                                            placeholder="Synopsis"
-                                        />
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </ModalBody>
-                        <ModalFooter>
-                            <Button color="primary" disabled={this.state.loadingStatus}
-                                onClick={(evt) => {
-                                    this.constructNews(evt)
-                                    this.toggle()
-                                }}>Add News</Button>{' '}
-                            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-                        </ModalFooter>
-                    </Modal>
-                </div>
-                <div className="newsCardContainer">
-                    {this.state.news.map(news => <NewsCard
-                        key={news.id}
-                        news={news}
-                        {...this.props} />)}
+                <div className="newsContainer">
+                    <div className="newsFormContainer">
+                        <div id="intro">
+                            <h3>NEWS</h3>
+                            <img id="pic" src={require('./news-01.png')} alt="My Dog" />
+                        </div>
+                        <Button id="modalFormBtn" className= "hvr-float" onClick={this.toggle} >{this.props.buttonLabel} Add News </Button>
+                        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                            <ModalHeader toggle={this.toggle}>Add News</ModalHeader>
+                            <ModalBody>
+                                <form>
+                                    <fieldset>
+                                        <div className="newsForm">
+                                            <label id="label" htmlFor="newsTitle">TITLE: </label>
+                                            <input
+                                                type="text"
+                                                required
+                                                onChange={this.handleFieldChange}
+                                                id="newsTitle"
+                                                placeholder="News Title"
+                                            />
+                                            <br></br>
+                                            <label id="label" htmlFor="date">Date:</label>
+                                            <input
+                                                type="date"
+                                                required
+                                                onChange={this.handleFieldChange}
+                                                id="date"
+                                                placeholder="Date"
+                                            />
+                                            <br></br>
+                                            <label id="label" htmlFor="synopsis">Synopsis:</label>
+                                            <input
+                                                type="text"
+                                                required
+                                                onChange={this.handleFieldChange}
+                                                id="synopsis"
+                                                placeholder="Synopsis"
+                                            />
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="primary" disabled={this.state.loadingStatus}
+                                    onClick={(evt) => {
+                                        this.constructNews(evt)
+                                        this.toggle()
+                                    }}>Add News</Button>{' '}
+                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                            </ModalFooter>
+                        </Modal>
+                    </div>
+                    <div className="newsCardContainer">
+                        {this.state.news.map(news => <NewsCard
+                            key={news.id}
+                            news={news}
+                            {...this.props}
+                            getData={this.getData} />)}
+                    </div>
                 </div>
             </>
         )

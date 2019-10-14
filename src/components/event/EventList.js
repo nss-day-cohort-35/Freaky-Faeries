@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+
 //import the components we will need
 import EventCard from './EventCard'
 import EventManager from '../../modules/EventManager'
@@ -58,59 +60,63 @@ class EventList extends Component {
     render() {
         return (
             <>
-                <div className="eventFormContainer">
-                    <h3>EVENTS</h3>
-                    <Button color="success" onClick={this.toggle} >{this.props.buttonLabel} Add New Event </Button>
-                    <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                        <ModalHeader toggle={this.toggle}>Add New Event</ModalHeader>
-                        <ModalBody>
-                            <form>
-                                <fieldset>
-                                    <div className="eventForm">
-                                        <label htmlFor="eventName">Title:</label>
-                                        <input
-                                            type="text"
-                                            required
-                                            onChange={this.handleFieldChange}
-                                            id="eventName"
-                                            placeholder="Event Title"
-                                        />
-                                        <label htmlFor="date">Date:</label>
-                                        <input
-                                            type="date"
-                                            required
-                                            onChange={this.handleFieldChange}
-                                            id="date"
-                                            placeholder="Date"
-                                        />
-                                        <label htmlFor="venue">venue:</label>
-                                        <input
-                                            type="text"
-                                            required
-                                            onChange={this.handleFieldChange}
-                                            id="venue"
-                                            placeholder="Venue"
-                                        />
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </ModalBody>
-                        <ModalFooter>
-                            <Button color="info" 
-                                onClick={(evt) => {
-                                    this.constructNewEvent(evt)
-                                    this.toggle()
-                                }}>Add New Event</Button>{' '}
-                            <Button color="info" onClick={this.toggle}>Cancel</Button>
-                        </ModalFooter>
-                    </Modal>
-                </div>
-                <div className="eventCardContainer">
-                    {this.state.events.map(event => <EventCard
-                        key={event.id}
-                        event={event}
-                        getData={this.getData}
-                        {...this.props} />)}
+                <div className="eventContainer">
+                    <div className="eventFormContainer">
+                        <div id="intro"><h3>EVENTS</h3>
+                            <img id="pic" src={require('./events-01.png')} alt="My Dog" />
+                        </div>
+                        <Button id="modalFormBtn" onClick={this.toggle} >{this.props.buttonLabel} Add New Event </Button>
+                        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                            <ModalHeader toggle={this.toggle}>Add New Event</ModalHeader>
+                            <ModalBody>
+                                <form>
+                                    <fieldset>
+                                        <div className="eventForm">
+                                            <label htmlFor="eventName">Title:</label>
+                                            <input
+                                                type="text"
+                                                required
+                                                onChange={this.handleFieldChange}
+                                                id="eventName"
+                                                placeholder="Event Title"
+                                            />
+                                            <label htmlFor="date">Date:</label>
+                                            <input
+                                                type="date"
+                                                required
+                                                onChange={this.handleFieldChange}
+                                                id="date"
+                                                placeholder="Date"
+                                            />
+                                            <label htmlFor="venue">venue:</label>
+                                            <input
+                                                type="text"
+                                                required
+                                                onChange={this.handleFieldChange}
+                                                id="venue"
+                                                placeholder="Venue"
+                                            />
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="info"
+                                    onClick={(evt) => {
+                                        this.constructNewEvent(evt)
+                                        this.toggle()
+                                    }}>Add New Event</Button>{' '}
+                                <Button color="info" onClick={this.toggle}>Cancel</Button>
+                            </ModalFooter>
+                        </Modal>
+                    </div>
+                    <div className="eventCardContainer">
+                        {this.state.events.map(event => <EventCard
+                            key={event.id}
+                            event={event}
+                            getData={this.getData}
+                            {...this.props} />)}
+                    </div>
                 </div>
             </>
         )

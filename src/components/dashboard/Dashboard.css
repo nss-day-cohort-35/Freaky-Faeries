@@ -1,6 +1,6 @@
 /* Components Border CSS */
 
-.newsCardContainer {
+/* .newsCardContainer {
     border-style: solid;
     border-color: black;
 }
@@ -18,19 +18,22 @@
 .eventFormContainer {
     border-style: solid;
     border-color: red;
-}
+} */
 
 .chatCardContainer {
-    border-style: solid;
-    border-color: black;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    overflow-y: scroll;
 }
 
-.chatFormContainer {
+/* .chatFormContainer {
     border-style: solid;
     border-color: purple;
-}
+} */
 
-.taskCardContainer {
+/* .taskCardContainer {
     border-style: solid;
     border-color: black;
 }
@@ -38,6 +41,10 @@
 .taskFormContainer {
     border-style: solid;
     border-color: green;
+} */
+
+.navbar {
+    position: 0;
 }
 
 :root {
@@ -49,6 +56,7 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100vw;
+    background-color: black;
 }
 
 .leftSection {
@@ -57,6 +65,8 @@
     display: flex;
     width: 25vw;
     height: 100vh;
+    margin-top: 1em;
+    margin-left: .5em;
 }
 
 .mainSection {
@@ -64,6 +74,8 @@
     display: flex;
     width: 50vw;
     flex-direction: column;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .rightSection {
@@ -73,4 +85,191 @@
     width: 25vw;
     flex-direction: column;
     height: 100vh;
+    margin-top: 1em;
+    margin-right: .5em;
+}
+
+.chatContainer {
+    margin-right: 1em;
+    height: 80vh;
+    background-color: whitesmoke;
+    border-radius: 2em;
+    margin-left: 1em;
+}
+
+.taskContainer {
+    margin-right: 1em;
+    margin-top: 1em;
+    background-color: whitesmoke;
+    border-radius: 2em;
+    margin-left: 1em;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: black;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+p {
+    font-family: 'Raleway';
+    text-transform: uppercase;
+    padding-left: 1em;
+    padding-top: 1em;
+    margin-bottom: 0;
+}
+
+#intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #FAC0B6;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 20px;
+}
+
+#pic {
+    height: 100px;
+    width: 100px;
+}
+
+#logoutPic {
+    height: 100px;
+    width: 100px;
+    margin-left: 4em;
+    cursor: pointer;
+}
+
+.chatCardContent {
+    width: 90%;
+    background-color: #c8b0e5;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 1em;
+}
+
+.chatCard {
+    display: flex;
+    justify-content: center;
+}
+
+#deleteBtn {
+    margin: .5em;
+    background-color: #c8b0e5;
+    border: none;
+}
+
+#deleteBtn:hover {
+    color: black;
+}
+
+#editBtn {
+    background-color: black;
+    border: none;
+}
+
+#editBtn:hover {
+    background-color: #fb6000;
+}
+
+#editBtnTask {
+    background-color: black;
+    border: none;
+    margin-bottom: .5em;
+}
+
+#editBtnTask:hover {
+    background-color: #fb6000;
+}
+
+.btn-info {
+    background-color: black;
+    border: none;
+}
+
+#modalFormBtn {
+    margin-left: 15px;
+    align-items: center;
+    line-height: 25px;
+    margin-bottom: 2em;
+    background: #fb6000;
+    border-style: none;
+    width: 140px;
+}
+
+#modalFormBtn:hover {
+    background-color: black;
+}
+
+.btn-success {
+    margin-left: 15px;
+    align-items: center;
+    line-height: 25px;
+    margin-bottom: 2em;
+}
+
+.friendContainer {
+    background-color: whitesmoke;
+    width: 100%;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: row;
+}
+
+.eventContainer {
+    background-color: whitesmoke;
+    /* border-top-left-radius: 2em;
+    border-top-right-radius: 2em; */
+    border-radius: 2em;
+}
+
+.newsContainer {
+    background-color: whitesmoke;
+    /* border-top-left-radius: 2em;
+    border-top-right-radius: 2em; */
+    border-radius: 2em;
+    margin-top: 1em;
+}
+
+#chatpic {
+    height: 115px;
+    width: 115px;
+}
+
+.eventCardContent {
+    background-color: #c8b0e5;
+    margin: 1em;
+    border-radius: 1em;
+}
+
+.newsCardContent {
+    background-color: #c8b0e5;
+    margin: 1em;
+    border-radius: 1em;
+}
+
+.taskCardContent {
+    background-color: #c8b0e5;
+    margin: 1em;
+    border-radius: 1em;
+}
+
+#label {
+    font-weight: 900;
+}
+
+.far {
+    margin-left: 1em;
+    margin-right: .25em;
 }

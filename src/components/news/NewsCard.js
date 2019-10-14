@@ -104,11 +104,11 @@ class NewsCard extends Component {
                 </Modal>
                 <div className="newsCard">
                     <div className="newsCardContent">
-                        <p>Title: {this.props.news.title}</p>
-                        <p>Date:{this.props.news.date}</p>
-                        <p>Synopsis:{this.props.news.synopsis}</p>
+                        <p><strong>Title: </strong>{this.props.news.title}</p>
+                        <p><strong>Date: </strong>{this.props.news.date}</p>
+                        <p><strong>Synopsis: </strong>{this.props.news.synopsis}</p>
                         <Button color="info" className="newsDeleteBtn" id="deleteBtn" type="button" onClick={() => this.handleDelete(this.props.news.id)}>Delete</Button>
-                        <Button color="info" onClick={this.toggle} >{this.props.buttonLabel} Edit News </Button>
+                        <Button color="info" id="editBtn" onClick={this.toggle} >{this.props.buttonLabel} Edit News </Button>
                     </div>
                 </div>
             </>
