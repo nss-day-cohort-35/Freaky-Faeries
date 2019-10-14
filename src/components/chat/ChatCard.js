@@ -92,7 +92,7 @@ class ChatCard extends Component {
                     <p>Chat Message:{this.props.chat.message}</p>
                     <p>Date: {this.props.chat.date}</p>
                     <Button color="info" className="chatDeleteBtn" id="deleteBtn" type="button" onClick={() => this.handleDelete (this.props.chat.id)}>Delete</Button>
-                    <Button color="info" onClick={this.toggle}> {this.props.buttonLabel} Edit Chat</Button>
+                    <Button color="info" id="editBtn" onClick={this.toggle}> {this.props.buttonLabel} Edit Chat</Button>
                 </div>
             </div>
             </>
