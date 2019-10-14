@@ -41,4 +41,4 @@ class FriendCard extends Component {
     }
 }
 
-export default FriendCard;
+// export default FriendCard;
