@@ -99,12 +99,12 @@ class NewsList extends Component {
                                 </form>
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="primary" disabled={this.state.loadingStatus}
+                                <Button id="editBtn" disabled={this.state.loadingStatus}
                                     onClick={(evt) => {
                                         this.constructNews(evt)
                                         this.toggle()
                                     }}>Add News</Button>{' '}
-                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                                <Button id="deleteBtn" onClick={this.toggle}>Cancel</Button>
                             </ModalFooter>
                         </Modal>
                     </div>

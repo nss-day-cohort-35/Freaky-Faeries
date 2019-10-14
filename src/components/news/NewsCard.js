@@ -41,7 +41,7 @@ class NewsCard extends Component {
         NewsManager.get(this.props.news.id)
             .then(news => {
                 this.setState({
-                    title: news.title,
+                    newsTitle: news.title,
                     date: news.date,
                     synopsis: news.synopsis,
                     loadingStatus: false,
@@ -94,7 +94,7 @@ class NewsCard extends Component {
                         </form>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="info" 
+                        <Button color="info"
                             onClick={(evt) => {
                                 this.updateExistingNews(evt)
                                 this.toggle()

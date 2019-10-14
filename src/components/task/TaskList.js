@@ -92,12 +92,12 @@ class TaskList extends Component {
                                 </form>
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="primary" disabled={this.state.loadingStatus}
+                                <Button id="editBtn" disabled={this.state.loadingStatus}
                                     onClick={(evt) => {
                                         this.constructNewTask(evt)
                                         this.toggle()
                                     }}>Add New Task</Button>{' '}
-                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                                <Button id="deleteBtn" onClick={this.toggle}>Cancel</Button>
                             </ModalFooter>
                         </Modal>
                     </div>
