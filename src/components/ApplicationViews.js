@@ -1,4 +1,4 @@
-import { Route, Redirect } from "react-router-dom"
+import { Route } from "react-router-dom"
 import React, { Component } from "react";
 import TaskAddForm from "./task/TaskAddForm";
 import EventAddForm from './event/EventAddForm';
@@ -7,7 +7,7 @@ import TaskList from './task/TaskList';
 import FriendList from './friend/FriendList';
 import NewsList from './news/NewsList';
 import EventList from './event/EventList';
-
+//import FriendAddForm from './friend/FriendAddForm';
 export default class ApplicationViews extends Component {
 
   isAuthenticated = () => localStorage.getItem("credentials") !== null
@@ -18,7 +18,7 @@ export default class ApplicationViews extends Component {
         <Route exact path="/" render={(props) => {
           return (
             <div className="main">
-              {/* <FriendAddForm {...props} /> */}
+              {/* { <FriendAddForm {...props} /> } */}
               <section className="leftSection">
                 <FriendList {...props} />
               </section>

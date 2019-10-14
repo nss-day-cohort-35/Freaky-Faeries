@@ -5,6 +5,8 @@ import "./Dashboard.css";
 import Header from '../header/Header'
 import Register from '../auth/Register'
 import Login from '../auth/Login'
+import "../auth/LoginRegister.css"
+
 
 class Dashboard extends Component {
   state = {
@@ -50,8 +52,10 @@ class Dashboard extends Component {
         <Header clearUser={this.clearUser} />
         <ApplicationViews />
         </>
-       :<><Login setUser={this.setUser}/>
+       :<><div className="logRegContainer">
+         <Login setUser={this.setUser}/>
        <Register setUser={this.setUser} />
+       </div>
        </>}
       </React.Fragment>
     );

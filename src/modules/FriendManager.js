@@ -6,5 +6,8 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/friends`).then(result => result.json())
-  }
+  },
+  get(friends){
+    return fetch(`${remoteURL}/friends${friends}`).then(result => result.json())
+  } 
 }
