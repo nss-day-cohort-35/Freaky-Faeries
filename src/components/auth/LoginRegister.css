@@ -2,17 +2,18 @@
 .logRegContainer{
     background-image: url("../Images/mal4.png");
     background-repeat: no-repeat;
-    width: 1269px;
-    height: 735px;
+    width: 1135px;
+    height: 601px;
     background-size: cover; 
 }
 
-fieldset {
+.logRegForm {
     display: flex;
     flex-direction: column;
-    align-content: center;
-    padding-left: 75px;
-    padding-top: 10px;
+    align-content: flex-start;
+    padding-left: 55px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     background-color: white;
-    opacity: 0.7;
+    opacity: .7;
 }

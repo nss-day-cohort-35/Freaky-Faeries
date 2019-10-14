@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import LoginManager from '../../modules/LoginManager'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 
 class Register extends Component {
@@ -38,8 +39,8 @@ class Register extends Component {
         };
         LoginManager.createUser(newUser)
           .then((createdUser) => {
-              //This determines which page you land on upon registration
-              this.props.setUser(createdUser)
+            //This determines which page you land on upon registration
+            this.props.setUser(createdUser)
           }
           )
       }
@@ -49,34 +50,37 @@ class Register extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleRegister}>
-        <fieldset>
-          <h3>Register</h3>
-          <div className="formgrid">
-            <label htmlFor="name">Name: </label>
-            <input onChange={this.handleFieldChange} type="name"
-              id="name"
-              placeholder="Name"
-              required="" autoFocus="" />
-            <label htmlFor="inputEmail">Email address: </label>
-            <input onChange={this.handleFieldChange} type="email"
-              id="email"
-              placeholder="Email address"
-              required="" autoFocus="" />
-            <label htmlFor="inputPassword">Password: </label>
-            <input onChange={this.handleFieldChange} type="password"
-              id="password"
-              placeholder="Password"
-              required="" />
-          </div>
-          <button type="submit" className="submit">
-            Register
-            </button>
-        </fieldset>
-      </form>
+      <>
+        <div className="logRegForm">
+          <h3 className="logRegTitle">Register</h3>
+          <Form onSubmit={this.handleRegister} inline>
+            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+              <Label htmlFor="name" className="mr-sm-2">Name:</Label>
+              <Input onChange={this.handleFieldChange} type="name"
+                id="name"
+                placeholder="Name"
+                required="" autoFocus="" />
+            </FormGroup>
+            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+              <Label htmlFor="inputEmail" className="mr-sm-2">Email:</Label>
+              <Input onChange={this.handleFieldChange} type="email"
+                id="email"
+                placeholder="Email address"
+                required="" autoFocus="" />
+            </FormGroup>
+            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+              <Label htmlFor="inputPassword" className="mr-sm-2">Password:</Label>
+              <Input onChange={this.handleFieldChange} type="password"
+                id="password"
+                placeholder="Password"
+                required="" />
+            </FormGroup>
+            <Button className="submit">Submit</Button>
+          </Form>
+        </div>
+      </>
     )
   }
-
 }
 
 export default Register

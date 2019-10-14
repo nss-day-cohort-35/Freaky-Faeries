@@ -1,5 +1,7 @@
 import React, { Component } from "react"
 import LoginManager from "../../modules/LoginManager";
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+
 
 class Login extends Component {
 
@@ -40,29 +42,26 @@ class Login extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleLogin}>
-                <fieldset>
-                    <h3>Login</h3>
-                    <div className="formgrid">
-                        <label htmlFor="inputEmail">Email address: </label>
-                        <input onChange={this.handleFieldChange} type="email"
-                            id="email"
-                            placeholder="Email address"
-                            required="" autoFocus="" />
-                        <label htmlFor="inputPassword">Password: </label>
-                        <input onChange={this.handleFieldChange} type="password"
-                            id="password"
-                            placeholder="Password"
-                            required="" />
-                    </div>
-                    <button type="submit" className="submit">
-                        Login
-                </button>
-                </fieldset>
-            </form>
-        )
-    }
-
-}
-
+            <>
+            <div className="logRegForm">
+                <h3 className="logRegTitle">Login</h3>
+            <Form onSubmit={this.handleLogin} inline>
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                        <Label htmlFor="inputEmail" className="mr-sm-2">Email:</Label>
+                        <Input onChange={this.handleFieldChange}
+                            required="" autoFocus="" type="email" name="email" id="email" placeholder="something@idk.cool" />
+                    </FormGroup>
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                        <Label htmlFor="inputPassword" className="mr-sm-2">Password:</Label>
+                        <Input onChange={this.handleFieldChange} type="password"
+                            required="" type="password" name="password" id="password" placeholder="don't tell!" />
+                    </FormGroup>
+                    <Button className="submit">Submit</Button>
+                </Form>
+                </div>
+                </>
+                );
+            }
+        }
+        
 export default Login 
