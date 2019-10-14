@@ -91,7 +91,7 @@
 
 .chatContainer {
     margin-right: 1em;
-    height: 80vh;
+    height: 50vh;
     background-color: whitesmoke;
     border-radius: 2em;
     margin-left: 1em;
@@ -101,6 +101,7 @@
 .taskContainer {
     margin-right: 1em;
     margin-top: 1em;
+    height: 50vh;
     background-color: whitesmoke;
     border-radius: 2em;
     margin-left: 1em;
@@ -234,6 +235,7 @@ p {
     background-color: whitesmoke;
     /* border-top-left-radius: 2em;
     border-top-right-radius: 2em; */
+    height: 50vh;
     border-radius: 2em;
     overflow-y: scroll;
 }
@@ -242,6 +244,7 @@ p {
     background-color: whitesmoke;
     /* border-top-left-radius: 2em;
     border-top-right-radius: 2em; */
+    height: 50vh;
     border-radius: 2em;
     margin-top: 1em;
     overflow-y: scroll;
@@ -278,3 +281,6 @@ p {
     margin-left: 1em;
     margin-right: .25em;
 }
+::-webkit-scrollbar {
+    display: none;
+    }
