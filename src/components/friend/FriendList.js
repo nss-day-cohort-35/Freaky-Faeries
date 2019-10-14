@@ -33,7 +33,7 @@ class FriendList extends Component {
                         <>
                             <div className="friendCard">
                                 <div className="friendCardContent">
-                                    <p>Name: Queen of the Forest</p>
+                                    <p><strong>Name: </strong>Queen of the Forest</p>
                                     <picture>
                                         <img className="catPic" src={require('./images/cat-01.png')} alt="Cat" />
                                     </picture>
@@ -41,7 +41,8 @@ class FriendList extends Component {
                                     <button className="friendDeleteBtn" id="deleteBtn" type="button">Delete Friend</button>
                                 </div>
 
-                                <div className="friendCardContent">                        <p>Name: Flutter</p>
+                                <div className="friendCardContent">
+                                    <p><strong>Name: </strong>Flutter</p>
                                     <picture>
                                         <img className="catPic" src={require('./images/cat-01.png')} alt="Cat" />
                                     </picture>
@@ -49,7 +50,7 @@ class FriendList extends Component {
                                     <button className="friendDeleteBtn" id="deleteBtn" type="button">Delete Friend</button>
                                 </div>
                                 <div className="friendCardContent">
-                                    <p>Name: Glitter</p>
+                                    <p><strong>Name: </strong>Glitter</p>
                                     <picture>
                                         <img className="catPic" src={require('./images/cat-01.png')} alt="Cat" />
                                     </picture>
@@ -58,7 +59,7 @@ class FriendList extends Component {
 
                                 </div>
                                 <div className="friendCardContent">
-                                    <p>Name:Sparkle</p>
+                                <p><strong>Name: </strong>Sparkle</p>
                                     <picture>
                                         <img className="catPic" src={require('./images/cat-01.png')} alt="Cat" />
                                     </picture>

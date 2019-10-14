@@ -44,6 +44,9 @@
 
 .navbar {
     position: 0;
+    display: flex;
+    justify-content: space-around !important;
+    background-color: whitesmoke;
 }
 
 :root {
@@ -120,6 +123,13 @@ h3 {
     padding-left: 15px;
 }
 
+h1 {
+    font-family: 'JFWilwood';
+    letter-spacing: .5em;
+    text-align: center;
+    margin-left: 9em;
+    font-weight: bold;
+}
 p {
     font-family: 'Raleway';
     text-transform: uppercase;
@@ -276,13 +286,27 @@ p {
     border-radius: 1em;
 }
 
-#label {
+label {
     font-weight: 900;
 }
 
 .far {
     margin-left: 1em;
     margin-right: .25em;
+}
+
+#bannerPic {
+    height: 100px;
+    margin-left: 10em;
+}
+
+#catBanner {
+    height: 100px;
+}
+
+form,
+fieldset {
+    background-color: whitesmoke;
 }
 ::-webkit-scrollbar {
     display: none;

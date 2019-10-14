@@ -87,12 +87,12 @@ class ChatList extends Component {
                                 </form>
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="primary"
+                                <Button id="editBtn" disabled={this.state.loadingStatus}
                                     onClick={(evt) => {
                                         this.constructNewChat(evt)
                                         this.toggle()
                                     }}>Add New Chat Message</Button>{' '}
-                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                                <Button id="deleteBtn" onClick={this.toggle}>Cancel</Button>
                             </ModalFooter>
                         </Modal>
                     </div>

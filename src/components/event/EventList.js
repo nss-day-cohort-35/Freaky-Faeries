@@ -89,7 +89,7 @@ class EventList extends Component {
                                                 id="date"
                                                 placeholder="Date"
                                             />
-                                            <label htmlFor="venue">venue:</label>
+                                            <label htmlFor="venue">Venue:</label>
                                             <input
                                                 type="text"
                                                 required
@@ -102,12 +102,12 @@ class EventList extends Component {
                                 </form>
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="info"
+                                <Button id="editBtn"
                                     onClick={(evt) => {
                                         this.constructNewEvent(evt)
                                         this.toggle()
                                     }}>Add New Event</Button>{' '}
-                                <Button color="info" onClick={this.toggle}>Cancel</Button>
+                                <Button id="deleteBtn" onClick={this.toggle}>Cancel</Button>
                             </ModalFooter>
                         </Modal>
                     </div>
