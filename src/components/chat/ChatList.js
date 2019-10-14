@@ -87,7 +87,7 @@ class ChatList extends Component {
                                 </form>
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="primary" disabled={this.state.loadingStatus}
+                                <Button color="primary"
                                     onClick={(evt) => {
                                         this.constructNewChat(evt)
                                         this.toggle()

@@ -92,7 +92,7 @@ class TaskList extends Component {
                                 </form>
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="primary" disabled={this.state.loadingStatus}
+                                <Button color="primary"
                                     onClick={(evt) => {
                                         this.constructNewTask(evt)
                                         this.toggle()
