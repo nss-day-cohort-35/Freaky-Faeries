@@ -12,7 +12,8 @@ class Header extends Component {
         return (
             <nav id="header" className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
                 <ul className="nav nav-pills nav-fill">
-                    <li><span className="nav-link" onClick={this.handleLogout}>Logout</span></li>
+                    {/* <li><span className="nav-link" >Logout</span></li> */}
+                    <img id="logoutPic" onClick={this.handleLogout} src={require('./logo-01.png')} alt="My Dog" />
                 </ul>
             </nav>
         )

@@ -49,8 +49,8 @@ class Dashboard extends Component {
       <React.Fragment>
       {(this.state.user) ?
         <>
-        <ApplicationViews />
         <Header clearUser={this.clearUser} />
+        <ApplicationViews />
         </>
        :<><div className="logRegContainer">
          <Login setUser={this.setUser}/>
