@@ -93,12 +93,11 @@ class TaskCard extends Component {
                     <div className="checkBox">
                     </div>
                     <div className="taskCardContent">
-                        <p>Task: {this.props.task.name}</p>
-                        <br></br>
-                        <p>Due Date: {this.props.task.date}</p>
+                        <p><strong>Task: </strong>{this.props.task.name}</p>
+                        <p><strong>Due Date: </strong>{this.props.task.date}</p>
                         <i className="far fa-check-circle fa-2x"
                         onClick={() => this.handleDelete(this.props.task.id)}></i>
-                    <Button color="info" onClick={this.toggle} >{this.props.buttonLabel} Edit Task </Button>
+                    <Button id="editBtnTask" className="btn btn-info" onClick={this.toggle} >{this.props.buttonLabel} Edit Task </Button>
                 </div>
             </div>
             </>
