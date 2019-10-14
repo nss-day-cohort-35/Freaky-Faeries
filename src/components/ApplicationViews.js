@@ -4,7 +4,7 @@ import TaskAddForm from "./task/TaskAddForm";
 import EventAddForm from './event/EventAddForm';
 import ChatList from './chat/ChatList';
 import TaskList from './task/TaskList';
-// import FriendList from './friend/FriendList';
+import FriendList from './friend/FriendList';
 import NewsList from './news/NewsList';
 import EventList from './event/EventList';
 //import FriendAddForm from './friend/FriendAddForm';
@@ -20,7 +20,7 @@ export default class ApplicationViews extends Component {
             <div className="main">
               {/* { <FriendAddForm {...props} /> } */}
               <section className="leftSection">
-                {/* <FriendList {...props} /> */}
+                <FriendList {...props} />
               </section>
               <section className="mainSection">
                 <ChatList {...props} />
