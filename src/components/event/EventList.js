@@ -22,7 +22,7 @@ class EventList extends Component {
     };
     constructNewEvent = evt => {
         evt.preventDefault();
-        if (this.state.eventName === "" || this.state.date === "" || this.state.venue === "") {
+        if (this.state.eventName === "" || this.state.date === "" || this.state.venue === "" || this.state.userId === "") {
             window.alert("Please input a title, date and venue");
         } else {
             this.setState({ loadingStatus: true });
@@ -30,6 +30,7 @@ class EventList extends Component {
                 name: this.state.eventName,
                 date: this.state.date,
                 venue: this.state.venue,
+                userId: this.state.userId
             };
 
             EventManager.post(event)
