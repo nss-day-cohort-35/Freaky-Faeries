@@ -26,6 +26,7 @@ class NewsList extends Component {
             const news = {
                 title: this.state.newsTitle,
                 date: this.state.date,
+                synopsis: this.state.synopsis,
             };
 
             NewsManager.post(news)
@@ -60,14 +61,14 @@ class NewsList extends Component {
                             <h3>NEWS</h3>
                             <img id="pic" src={require('./news-01.png')} alt="My Dog" />
                         </div>
-                        <Button id="modalFormBtn" onClick={this.toggle} >{this.props.buttonLabel} Add News </Button>
+                        <Button id="modalFormBtn" className= "hvr-float" onClick={this.toggle} >{this.props.buttonLabel} Add News </Button>
                         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                             <ModalHeader toggle={this.toggle}>Add News</ModalHeader>
                             <ModalBody>
                                 <form>
                                     <fieldset>
                                         <div className="newsForm">
-                                            <label htmlFor="newsTitle">Title:</label>
+                                            <label id="label" htmlFor="newsTitle">TITLE: </label>
                                             <input
                                                 type="text"
                                                 required
@@ -76,7 +77,7 @@ class NewsList extends Component {
                                                 placeholder="News Title"
                                             />
                                             <br></br>
-                                            <label htmlFor="date">Date:</label>
+                                            <label id="label" htmlFor="date">Date:</label>
                                             <input
                                                 type="date"
                                                 required
@@ -85,7 +86,7 @@ class NewsList extends Component {
                                                 placeholder="Date"
                                             />
                                             <br></br>
-                                            <label htmlFor="synopsis">Synopsis:</label>
+                                            <label id="label" htmlFor="synopsis">Synopsis:</label>
                                             <input
                                                 type="text"
                                                 required
@@ -111,7 +112,8 @@ class NewsList extends Component {
                         {this.state.news.map(news => <NewsCard
                             key={news.id}
                             news={news}
-                            {...this.props} />)}
+                            {...this.props}
+                            getData={this.getData} />)}
                     </div>
                 </div>
             </>

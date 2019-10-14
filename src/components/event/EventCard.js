@@ -105,11 +105,11 @@ class EventCard extends Component {
                     </Modal>
                 <div className="eventCard">
                     <div className="eventCardContent">
-                        <p>Event: {this.props.event.name}</p>
-                        <p>Date:{this.props.event.date}</p>
-                        <p>Venue:{this.props.event.venue}</p>
+                        <p><strong>Event: </strong>{this.props.event.name}</p>
+                        <p><strong>Date: </strong>{this.props.event.date}</p>
+                        <p><strong>Venue: </strong>{this.props.event.venue}</p>
                         <Button color="info" className="eventDeleteBtn" id="deleteBtn" type="button" onClick={() => this.handleDelete(this.props.event.id)}>Delete</Button>
-                        <Button color="info" onClick={this.toggle} >{this.props.buttonLabel} Edit Event </Button>
+                        <Button color="info" id="editBtn" onClick={this.toggle} >{this.props.buttonLabel} Edit Event </Button>
                     </div>
                 </div>
             </>
